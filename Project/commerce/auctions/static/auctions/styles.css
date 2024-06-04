@@ -1,0 +1,10 @@
+body {
+    padding: 10px;
+}
+.small-card {
+    max-width: 790px; /* Adjust the width to be smaller */
+    padding: 5px; /* Reduce padding */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    {{title}} - Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create a New Page</h1>
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+    <form action="{% url 'encyclopedia:new_page' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="title" class="form-label">Title:</label>
+          <input type="text" class="form-control" id="title" name="title" value="{{ title }}" placeholder="Title of the page">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content:</label>
+            <textarea
+            class="form-control"
+            id="content"
+            cols="30"
+            name="content"
+            rows="10"
+            placeholder="Write page content in Markdown"
+            rows="3"
+            ></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+{% endblock %}
